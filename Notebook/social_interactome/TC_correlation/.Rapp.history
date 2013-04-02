@@ -1,0 +1,250 @@
+}
+test(c(1,2,3,4,5))
+getApiPath <- function() {
+return("http://api.brain-map.org")
+}
+apiQuery <- function(query) {
+totalRows <- -1
+rowsPerPage <- 2000
+startRow <- 0
+queryFormat <- "%s/api/v2/data/%s&startRow=%d&numRows=%d"
+Download meta information about the human microarray samples one page at a time.
+while (totalRows < 0 || startRow < totalRows) {
+queryString <- sprintf(queryFormat, getApiPath(), query, startRow, rowsPerPage)
+print(queryString)
+resultString <- readLines(queryString)
+resultJSON <- fromJSON(resultString)
+if (totalRows < 0) {
+totalRows <- as.integer(resultJSON$total_rows)
+output <- resultJSON$msg
+} else {
+output <- c(output,resultJSON$msg)
+}
+startRow <- startRow + rowsPerPage
+}
+return(output)
+}
+downloadStructure <- function(structureID) {
+queryString <- sprintf("%s/api/v2/data/Structure/%s.json", getApiPath(), structureID)
+print(queryString)
+resultString <- readLines(queryString)
+resultJSON <- fromJSON(resultString)
+return(resultJSON$msg[[1]])
+}
+downloadSampleProperties <- function(sampleInfo) {
+structureIDs = sampleInfo$structure_id
+numSamples <- length(structureIDs)
+Fill the sample data frame with color and order information.
+structureColors <- array("#000000FF",numSamples)
+structureOrders <- array(0,numSamples)
+for (i in 1:numSamples) {
+s = downloadStructure(structureIDs[i])
+structureOrders[i] <- s$graph_order
+structureColors[i] <- paste("#",s$color_hex_triplet,sep="")
+}
+sampleInfo[,"order"] <- structureOrders
+sampleInfo[,"color"] <- structureColors
+return(sampleInfo)
+}
+x<-log10(c(10000,5000,2500,1250,625,313,156))
+y<-c(0.08890,0.14035,0.22435,0.34835,0.44165,0.54585,0.61715)
+plot(x,y,xlab="log cort concentration log(pg/mL)",ylab="OD",pch=16,col="blue")
+model=nls(y ~ d+(a-d)/(1+(x/cc)^b),start=list(a=.6,b=6,cc=3.2,d=.2))
+print(summary(model))
+model2<-lm(y~x)
+summary(model2)
+anova(model2,model)
+summary(model)
+AIC(model)
+AIC(model2)
+model
+summary(model2)
+help(AIC)
+AIC(model,model2)
+model
+open
+load(alldata.RDATA)
+load("alldata.RDATA")
+load("alldata.RDATA")
+load("alldata_updated.RDATA")
+hormoneData<-alldata[day==10,]
+hormoneData<-alldata[alldata$day==10,]
+library(effects); library(lme4)
+names(hormoneData)[24:25]<-c("cort","test")
+plot(test~cort,data=hormoneData)
+palette()
+palette()[1:2]<-c("black","gray50")
+palette(c("black","gray50"))
+plot(test~cort,data=hormoneData,pch=16,col=as.numeric(Status))
+plot(test~cort,data=hormoneData,pch=16,col=as.numeric(Status)cex=1.5)
+plot(test~cort,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+plot(cort~test^2,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+palette(c("gray50","black"))
+plot(cort~test^2,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+hormoneData$test
+(hormoneData$test)^2
+(hormoneData$test)^4
+hormoneData$test<-hormoneData$test^2
+hormoneData$test
+alldata[alldata$day==10,25]
+alldata[alldata$day==10,25]<-alldata[alldata$day==10,25]^2
+alldata[alldata$day==10,25]
+save(alldata,"alldata_updated.RDATA")
+save(alldata,file="alldata_updated.RDATA")
+plot(cort~test^2,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+hormoneData<-alldata[alldata$day==10,]
+names(hormoneData)[24:25]<-c("cort","test")
+hormoneData
+hormoneData$test
+plot(cort~(test^2),data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+plot(cort~(test^2),data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+hormoneData
+hormoneData$test
+names(hormoneData)
+hormoneData$test
+hormoneData$test^2
+plot(cort~(hormoneData$test^2),data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+regT<-hormoneData$test^2
+regT
+plot(cort~regT,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+par(mfrow=c(2,1))
+plot(cort~regT,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+model<-lmer(cort~test^2,)
+plot(cort~test,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+par(mfrow=c(3,1))
+plot(cort~regT,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+plot(cort~test,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+plot(test~cort,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+par(mfrow=c(2,1))
+plot(test~cort,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+plot(regT~cort,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+plot(test~cort,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+model<-lmer(test~cort+(1|tank),data=hormoneData)
+model
+model<-lmer(test~cort*Status+(1|tank),data=hormoneData)
+model
+model<-lmer(test~cort+Status+(1|tank),data=hormoneData)
+model
+model2<-lmer(test~cort*Status+(1|tank,data=hormoneData))
+model2<-lmer(test~cort*Status+(1|tank),data=hormoneData)
+anova(model,model2)
+model2
+mcmcMod1<-mcmcsamp(model,10000)
+mcmcMod2<-mcmcsamp(model2,10000)
+get.pvalues.mcmc<-function(mcmc){
+hpd = lme4::HPDinterval(mcmc)
+mcmcfixef = t(mcmc@fixef)
+nr <- nrow(mcmcfixef)
+prop <- colSums(mcmcfixef > 0)/nr
+pvalues <- 2 * pmax(0.5/nr, pmin(prop, 1 - prop))
+modelInfo<-list(p.vals=pvalues,confint=hpd)
+return(modelInfo)
+}
+get.pvalues.mcmc(mcmcMod1)
+model
+get.pvalues.mcmc(mcmcMod2)
+library(xtables)
+library(effects); library(lme4); library(xtable)
+model
+summary(model)
+modSummary<-summary(model)
+modSummary
+str(modSummary)
+modSummary@REmat
+modSummary@fixef
+modSummary@frame
+modSummary@coefs
+coefs<-modSummary@coefs
+coefs
+is.data.frame(coefs)
+is.matrix(coefs)
+as.data.frame(coefs)
+coefs<-as.data.frame(modSummary@coefs)
+mcmc1pval<-get.pvalues.mcmc(mcmcMod1)
+mcmc2pval<-get.pvalues.mcmc(mcmcMod2)
+mcmcSummary<-mcmc1pval
+mcmcSummary
+mcmcSummary$p.vals
+is.vector(mcmcSummary$p.vals)
+coefs$p.value<-mcmcSummary$p.vals
+coefs
+mcmcSummary$confint$fixef
+str(mcmcSummary$confint$fixef)
+as.data.frame(mcmcSummary$confint$fixef)
+as.data.frame(mcmcSummary$confint$fixef)$lower
+coefs$HPDlower<-as.data.frame(mcmcSummary$confint$fixef)$lower
+coefs$HPDupper<-as.data.frame(mcmcSummary$confint$fixef)$upper
+coefs
+coefs<-as.data.frame(modSummary@coefs)
+coefs$p value<-mcmcSummary$p.vals
+coefs$p_value<-mcmcSummary$p.vals
+coefs$HPDlower<-as.data.frame(mcmcSummary$confint$fixef)$lower
+coefs$HPDupper<-as.data.frame(mcmcSummary$confint$fixef)$upper
+coefs
+coefs[,c(1,2,5,6,3,4)]
+makeNiceTable<-function(mcmcSummary,modSummary){
+coefs<-as.data.frame(modSummary@coefs)
+coefs$p_value<-mcmcSummary$p.vals
+coefs$HPDlower<-as.data.frame(mcmcSummary$confint$fixef)$lower
+coefs$HPDupper<-as.data.frame(mcmcSummary$confint$fixef)$upper
+coefs<-coefs[,c(1,2,5,6,3,4)]
+return(coefs)
+}
+makeNiceTable(mcmcMod1,summary(model))
+mcmcSummary$p.vals
+mcmcSummary
+makeNiceTable(mcmc1pval,summary(model))
+makeNiceTable(mcmc2pval,summary(model2))
+is.data.frame(makeNiceTable(mcmc1pval,summary(model)))
+xtable(makeNiceTable)
+table1<-makeNiceTable(mcmc1pval,summary(model))
+xtable(table1)
+eff<-allEffects(model2)
+str(eff)
+corteff<-eff$ cort
+effects<-data.frame(fit=corteff$fit,lower=corteff$lower,upper=corteff$upper,status=corteff$x[,2],cort=corteff$x[,1])
+plot(test~cort,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+lines(effects$cort[1:10],effects$fit[1:10],col="black")
+lines(effects$cort[1:10],effects$upper[1:10],col="black",lty="dotted")
+lines(effects$cort[1:10],effects$lower[1:10],col="black",lty="dotted")
+lines(effects$cort[11:20],effects$fit[11:20],col="red")
+lines(effects$cort[11:20],effects$upper[11:20],col="red",lty="dotted")
+lines(effects$cort[11:20],effects$lower[11:20],col="red",lty="dotted")
+lines(effects$cort[11:20],effects$fit[11:20],col="black",lwd=3)
+plot(test~cort,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+lines(effects$cort[1:10],effects$fit[1:10],col="gray50")
+lines(effects$cort[1:10],effects$upper[1:10],col="gray50",lty="dotted")
+lines(effects$cort[1:10],effects$lower[1:10],col="gray50",lty="dotted")
+lines(effects$cort[11:20],effects$fit[11:20],col="black",lwd=3)
+lines(effects$cort[11:20],effects$upper[11:20],col="black",lty="dotted")
+lines(effects$cort[11:20],effects$lower[11:20],col="black",lty="dotted")
+lines(effects$cort[1:10],effects$fit[1:10],col="gray50",lwd=3)
+plot(test~cort,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5)
+lines(effects$cort[1:10],effects$fit[1:10],col="gray50",lwd=3)
+lines(effects$cort[1:10],effects$upper[1:10],col="gray50",lty="dotted")
+lines(effects$cort[1:10],effects$lower[1:10],col="gray50",lty="dotted")
+lines(effects$cort[11:20],effects$fit[11:20],col="black",lwd=3)
+lines(effects$cort[11:20],effects$upper[11:20],col="black",lty="dotted")
+lines(effects$cort[11:20],effects$lower[11:20],col="black",lty="dotted")
+plot(test~cort,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5,xlab="cortisol (residuals)",ylab="sqrt(testosterone) ng/mL")
+lines(effects$cort[1:10],effects$fit[1:10],col="gray50",lwd=3)
+lines(effects$cort[1:10],effects$upper[1:10],col="gray50",lty="dotted")
+lines(effects$cort[1:10],effects$lower[1:10],col="gray50",lty="dotted")
+lines(effects$cort[11:20],effects$fit[11:20],col="black",lwd=3)
+lines(effects$cort[11:20],effects$upper[11:20],col="black",lty="dotted")
+lines(effects$cort[11:20],effects$lower[11:20],col="black",lty="dotted")
+plot2py<-function(){
+plot(test~cort,data=hormoneData,pch=16,col=as.numeric(Status),cex=1.5,xlab="cortisol (residuals)",ylab="sqrt(testosterone) ng/mL")
+lines(effects$cort[1:10],effects$fit[1:10],col="gray50",lwd=3)
+lines(effects$cort[1:10],effects$upper[1:10],col="gray50",lty="dotted")
+lines(effects$cort[1:10],effects$lower[1:10],col="gray50",lty="dotted")
+lines(effects$cort[11:20],effects$fit[11:20],col="black",lwd=3)
+lines(effects$cort[11:20],effects$upper[11:20],col="black",lty="dotted")
+lines(effects$cort[11:20],effects$lower[11:20],col="black",lty="dotted")
+}
+getwd
+getwd()
+save.image("tcCor.RDATA")
+table1<-makeNiceTable(mcmc1pval,summary(model))
+table2<-makeNiceTable(mcmc2pval,summary(model2))
+save.image("tcCor.RDATA")

@@ -1,0 +1,861 @@
+d <- data.frame(x1=rnorm(10),#
+                 x2=rnorm(10),#
+                 x3=rnorm(10))#
+cor(d) # get correlations
+as.matrix(cor(d))
+help(cor.test)
+cor.test(d)
+cor.test(cor(d))
+help(cor.prob)
+d <- data.frame(x1=rnorm(10),x2=rnorm(10),x3=rnorm(10))
+cor(d) # get correlations
+corMat<-cor(d) # get correlations
+corMat<-as.matrix(corMat)
+corMat
+pMatrix<-matrix(ncol=ncol(corMat),nrow=nrow(corMat))
+cor.test(d$col1,d$col2)
+col1<-1
+col2<-2
+cor.test(d$col1,d$col2)
+cor.test(d[,col1],d[,col2])
+corl<-cor.test(d[,col1],d[,col2])
+str(corl)
+corl$p.value
+for(col in 1:ncol(d)){#
+	for(col2 in 1:ncol(d)){#
+		corl<-cor.test(d[,col1],d[,col2])#
+		pMatrix[col1,col2]<-corl$p.value #there is a slot in the corl object called p.value that has the p.value from that test. We store in the matrix#
+	}#
+}
+pMatrix
+pMatrix<-matrix(ncol=ncol(corMat),nrow=nrow(corMat)) #empty matrix for your p-values#
+#
+for(col in 1:ncol(d)){#
+	for(col2 in 1:ncol(d)){#
+		corl<-cor.test(d[,col],d[,col2])#
+		pMatrix[col1,col2]<-corl$p.value #there is a slot in the corl object called p.value that has the p.value from that test. We store in the matrix#
+	}#
+}
+pMatrix
+pMatrix<-matrix(ncol=ncol(corMat),nrow=nrow(corMat)) #empty matrix for your p-values#
+#
+for(col in 1:ncol(d)){#
+	for(col2 in 1:ncol(d)){#
+		corl<-cor.test(d[,col],d[,col2])#
+		pMatrix[col,col2]<-corl$p.value #there is a slot in the corl object called p.value that has the p.value from that test. We store in the matrix#
+	}#
+}
+pMatrix
+master
+rosetta
+which(master$sampNames==8)
+which(master$sampNames==8)
+which(master$sampNames==8)>0
+which(master$sampNames==8)
+which(master$sampNames==8)==0
+which(master$sampNames==8)>1
+any(master$sampNames==8)
+rosetta
+addSCode<-function(pCodeVector){#
+	sCode<-vector()#
+	for(i in pCodeVector){#
+		sCode<-c(sCode,rosetta$sCode[rosetta$pCode==i])#
+	}#
+}
+addSCode<-function(pCodeVector){#
+	sCode<-vector()#
+	for(i in pCodeVector){#
+		sCode<-c(sCode,rosetta$sCode[rosetta$pCode==i])#
+	}#
+	return(sCode)#
+}
+addSCode(master$sampleName)
+length(addScode)
+length(addSCode(master$sampleName))
+master$sampleName
+is.numeric("D2")
+is.numeric(NA)
+is.numeric(40)
+addSCode<-function(pCodeVector){#
+	sCode<-vector()#
+	for(i in pCodeVector){#
+		if(is.numeric(i))(sCode<-c(sCode,rosetta$sCode[rosetta$pCode==i])) else (sCode<-c(sCode,NA))#
+	}#
+	return(sCode)#
+}
+addSCode(master$sampleName)
+is.numeric(master$sampleName)
+is.numeric(master$sampleName[13])
+master$sampleName[13]
+is.numeric(master$sampleName[14])
+master$sampleName[14]
+is.numeric(master$sampleName[14])
+as.numeric(master$sampleName[14])
+as.numeric(master$sampleName)
+master$sampleName
+addSCode<-function(pCodeVector){#
+	sCode<-vector()#
+	for(i in pCodeVector){#
+		i<-as.numeric(i)#
+		sCode<-c(sCode,rosetta$sCode[rosetta$pCode==i])#
+	}#
+	return(sCode)#
+}
+addSCode(master$sampleName)
+addSCode<-function(pCodeVector){#
+	sCode<-vector()#
+	pCodeV<-as.numeric(pCodeVector)#
+	for(i in pCodeV){#
+		sCode<-c(sCode,rosetta$sCode[rosetta$pCode==i])#
+	}#
+	return(sCode)#
+}
+addSCode(master$sampleName)
+addSCode<-function(pCodeVector){#
+	sCode<-vector()#
+	pCodeV<-as.numeric(pCodeVector)#
+	for(i in pCodeV){#
+		if(!is.na(pCodeV))(sCode<-c(sCode,rosetta$sCode[rosetta$pCode==i])) else (sCode<-c(sCode,NA))#
+	}#
+	return(sCode)#
+}
+addSCode(master$sampleName)
+pCodeVector<-master$sampleName
+pCodeVector
+sCode<-vector()
+pCodeV<-as.numeric(pCodeVector)
+pCodeV
+for(i in pCodeV){#
+		if(!is.na(pCodeV))(sCode<-c(sCode,rosetta$sCode[rosetta$pCode==i])) else (sCode<-c(sCode,NA))#
+	}
+sCode
+i
+warnings
+warnings()
+addSCode<-function(pCodeVector){#
+	sCode<-vector()#
+	pCodeV<-as.numeric(pCodeVector)#
+	for(i in pCodeV){#
+		if(!is.na(i))(sCode<-c(sCode,rosetta$sCode[rosetta$pCode==i])) else (sCode<-c(sCode,NA))#
+	}#
+	return(sCode)#
+}
+addSCode(master$sampleName)
+data.frame(master$sampleName)
+max(rosetta$pCode)
+max(rosetta$sCode)
+pCodeV
+pCodeV[pCodeV>64]<-NA
+pCodeV
+addSCode<-function(pCodeVector){#
+	sCode<-vector()#
+	pCodeV<-as.numeric(pCodeVector)#
+	pCodeV[pCodeV>64]<-NA#
+	for(i in pCodeV){#
+		if(!is.na(i))(sCode<-c(sCode,rosetta$sCode[rosetta$pCode==i])) else (sCode<-c(sCode,NA))#
+	}#
+	return(sCode)#
+}
+addSCode(master$sampleName)
+master
+cort<-function(txtfilename,dil,names=rep(NA,48)){#
+#
+filename<-txtfilename#
+master<-as.data.frame(matrix(nrow=48,ncol=5))#
+colnames(master)<-c("mean_OD","CV","net_OD","log_concent","ng_ml")#
+rownames(master)[1:11]<-c("blank","ta","nsb","bo","std1","std2","std3","std4","std5","std6","std7")#
+#
+data<-read.delim(filename,skip=3,header=FALSE)#
+data405<-as.matrix(data[1:8,3:14])#
+data595<-as.matrix(data[1:8,16:27])#
+data405<-dataPrePro(data405)#
+data595<-dataPrePro(data595)#
+#
+sub<-(data405-data595)#
+master$mean_OD<-getMeanOD(sub)#
+#assumes you are following the std Hofmann lab protocol of putting the replicates one below the other#
+master$CV<-getCV(sub)#
+#master$percent_bound<-getBound(master)#
+master$net_OD<-getNetOD(master$mean_OD,master)#
+x<-log10(c(10000,5000,2500,1250,625,313,156))#
+y<-master$net_OD[5:11]#
+#A=max assmptote, B=Slope factor,C= inflection point, D=min assymptote#
+model=nls(y ~ d+(a-d)/(1+(x/cc)^b),start=list(a=.6,b=6,cc=3.2,d=.2))#
+xplot <- seq(min(x),max(x),length=100)#
+yplot <- (coef(model)["d"]+(coef(model)["a"]-coef(model)["d"])/(1+(xplot/coef(model)["cc"])^coef(model)["b"]))#
+plot(x,y,xlab="log cort concentration log(pg/mL)",ylab="net net_OD",pch=16,col="blue")#
+lines(xplot,yplot, lty="dotted", col="gray50",lwd=3)#
+master$log_concent<-coef(model)["cc"]*(((-1*coef(model)["a"]+master$net_OD)/(coef(model)["d"]-master$net_OD))^(1/coef(model)["b"]))#
+points(y=master$net_OD[12:48],x=master$log_concent[12:48],pch=16,col="#1A985085")#
+master$ng_ml<-((10^master$log_concent)*dil)/1000#
+master$log_concent[1:11]<-NA#
+master$ng_ml[1:11]<-NA#
+master$sampNames<-names#
+master$seanCode<-addSCode(master$sampNames)#
+print(master)#
+print(summary(model))#
+fit<-1-(deviance(model)/sum((y-mean(y))^2))#
+#write.csv(master,paste(filename,".csv",sep=""))#
+text(3.5,.55,labels=paste("Quality of fit","=",fit))#
+}#
+#
+dataPrePro<-function(pdata){#
+  colCount<-1#
+  cdata<-matrix(nrow=length(pdata[,1]),ncol=length(pdata[1,]))#
+  while(colCount<=length(pdata[1,])){#
+    for(i in 1:length(pdata[,1])){#
+      cdata[i,colCount]<-as.numeric(pdata[i,colCount])#
+    }#
+    colCount<-colCount+1#
+  }#
+  cdata#
+}#
+#
+getMeanOD<-function(subD2){#
+  subData<-as.vector(subD2[,])#
+  vecCount<-1#
+ stc<-1#
+  meanOD<-rep(NA,48)#
+    while(stc<=96){#
+      meanOD[vecCount]<-mean(subData[stc:(stc+1)])#
+      stc<-stc+2#
+      vecCount<-vecCount+1#
+      }#
+  meanOD#
+}#
+#
+getCV<-function(subD2){#
+  subData<-as.vector(subD2[,])#
+  vecCount<-1#
+  stc<-1#
+  cv<-rep(NA,48)#
+  while(stc<=96){#
+    cv[vecCount]<-100*((sd(subData[stc:(stc+1)]))/(mean(subData[stc:(stc+1)])))#
+    stc<-stc+2#
+    vecCount<-vecCount+1#
+  }#
+  cv#
+}#
+#
+#getBound<-function(master){#
+#  subBlank<-master[,1]-master[1,1]#
+#  net<-subBlank-subBlank[3]#
+#  bound<-100*(net/net[4]) #
+#  bound#
+#}#
+#
+getNetOD<-function(vector,master){#
+  blank<-master[1,1]#
+  subBlank<-(vector-blank)#
+  NSB<-subBlank[3]#
+  netOD<-(subBlank-NSB)#
+}#
+#
+addSCode<-function(pCodeVector){#
+	sCode<-vector()#
+	pCodeV<-as.numeric(pCodeVector)#
+	pCodeV[pCodeV>64]<-NA#
+	for(i in pCodeV){#
+		if(!is.na(i))(sCode<-c(sCode,rosetta$sCode[rosetta$pCode==i])) else (sCode<-c(sCode,NA))#
+	}#
+	return(sCode)#
+}
+cort("3-1-2013_cort.txt",dil,names=names)
+help(suppressWarnings)
+Cortisol Assay v1 2/20/2013 Sean Maguire #
+#######################################################################################
+#functions are listed in the end so read them in first the first time you use it!!#
+#if you make changes please save as your OWN FILE do not save over this file please!#
+#Run this after reading in all of the functions:  cort("my file name.txt")#
+#######################################################################################
+#dilution vector (change here if necessary) samples start at row 10.#
+#for example: If your first sample was diluted less than 30 times (lets say 15), then you would set row 10 (first sample is row 10) to 15 rather than 30:#
+#dil[10]<-15#
+#For more than one sample:#
+#dil[c(10,27,22)]<-15#
+#If all of your dilutions are different from the standard 30, you can just change the original code:#
+#dil<-rep(15,length(master[,1]))#
+#dil<-rep(30,48)#
+#cort("",dil)#
+###############################some functions##########################################
+#dil<-rep(30,48); dil[12]<-42#
+#cort("3-1-2013_cort.txt",dil,names=names)#
+cort<-function(txtfilename,dil,names=rep(NA,48)){#
+#
+filename<-txtfilename#
+master<-as.data.frame(matrix(nrow=48,ncol=5))#
+colnames(master)<-c("mean_OD","CV","net_OD","log_concent","ng_ml")#
+rownames(master)[1:11]<-c("blank","ta","nsb","bo","std1","std2","std3","std4","std5","std6","std7")#
+#
+data<-read.delim(filename,skip=3,header=FALSE)#
+data405<-as.matrix(data[1:8,3:14])#
+data595<-as.matrix(data[1:8,16:27])#
+data405<-dataPrePro(data405)#
+data595<-dataPrePro(data595)#
+#
+sub<-(data405-data595)#
+master$mean_OD<-getMeanOD(sub)#
+#assumes you are following the std Hofmann lab protocol of putting the replicates one below the other#
+master$CV<-getCV(sub)#
+#master$percent_bound<-getBound(master)#
+master$net_OD<-getNetOD(master$mean_OD,master)#
+x<-log10(c(10000,5000,2500,1250,625,313,156))#
+y<-master$net_OD[5:11]#
+#A=max assmptote, B=Slope factor,C= inflection point, D=min assymptote#
+model=nls(y ~ d+(a-d)/(1+(x/cc)^b),start=list(a=.6,b=6,cc=3.2,d=.2))#
+xplot <- seq(min(x),max(x),length=100)#
+yplot <- (coef(model)["d"]+(coef(model)["a"]-coef(model)["d"])/(1+(xplot/coef(model)["cc"])^coef(model)["b"]))#
+plot(x,y,xlab="log cort concentration log(pg/mL)",ylab="net net_OD",pch=16,col="blue")#
+lines(xplot,yplot, lty="dotted", col="gray50",lwd=3)#
+master$log_concent<-coef(model)["cc"]*(((-1*coef(model)["a"]+master$net_OD)/(coef(model)["d"]-master$net_OD))^(1/coef(model)["b"]))#
+points(y=master$net_OD[12:48],x=master$log_concent[12:48],pch=16,col="#1A985085")#
+master$ng_ml<-((10^master$log_concent)*dil)/1000#
+master$log_concent[1:11]<-NA#
+master$ng_ml[1:11]<-NA#
+master$sampNames<-names#
+suppressWarnings(master$seanCode<-addSCode(master$sampNames))#
+print(master)#
+print(summary(model))#
+fit<-1-(deviance(model)/sum((y-mean(y))^2))#
+#write.csv(master,paste(filename,".csv",sep=""))#
+text(3.5,.55,labels=paste("Quality of fit","=",fit))#
+}#
+#
+dataPrePro<-function(pdata){#
+  colCount<-1#
+  cdata<-matrix(nrow=length(pdata[,1]),ncol=length(pdata[1,]))#
+  while(colCount<=length(pdata[1,])){#
+    for(i in 1:length(pdata[,1])){#
+      cdata[i,colCount]<-as.numeric(pdata[i,colCount])#
+    }#
+    colCount<-colCount+1#
+  }#
+  cdata#
+}#
+#
+getMeanOD<-function(subD2){#
+  subData<-as.vector(subD2[,])#
+  vecCount<-1#
+ stc<-1#
+  meanOD<-rep(NA,48)#
+    while(stc<=96){#
+      meanOD[vecCount]<-mean(subData[stc:(stc+1)])#
+      stc<-stc+2#
+      vecCount<-vecCount+1#
+      }#
+  meanOD#
+}#
+#
+getCV<-function(subD2){#
+  subData<-as.vector(subD2[,])#
+  vecCount<-1#
+  stc<-1#
+  cv<-rep(NA,48)#
+  while(stc<=96){#
+    cv[vecCount]<-100*((sd(subData[stc:(stc+1)]))/(mean(subData[stc:(stc+1)])))#
+    stc<-stc+2#
+    vecCount<-vecCount+1#
+  }#
+  cv#
+}#
+#
+#getBound<-function(master){#
+#  subBlank<-master[,1]-master[1,1]#
+#  net<-subBlank-subBlank[3]#
+#  bound<-100*(net/net[4]) #
+#  bound#
+#}#
+#
+getNetOD<-function(vector,master){#
+  blank<-master[1,1]#
+  subBlank<-(vector-blank)#
+  NSB<-subBlank[3]#
+  netOD<-(subBlank-NSB)#
+}#
+#
+addSCode<-function(pCodeVector){#
+	sCode<-vector()#
+	pCodeV<-as.numeric(pCodeVector)#
+	pCodeV[pCodeV>64]<-NA#
+	for(i in pCodeV){#
+		if(!is.na(i))(sCode<-c(sCode,rosetta$sCode[rosetta$pCode==i])) else (sCode<-c(sCode,NA))#
+	}#
+	return(sCode)#
+}
+cort("3-1-2013_cort.txt",dil,names=names)
+save.image(cort.RDATA)
+save.image("cort.RDATA")
+Cortisol Assay v1 2/20/2013 Sean Maguire #
+#######################################################################################
+#functions are listed in the end so read them in first the first time you use it!!#
+#if you make changes please save as your OWN FILE do not save over this file please!#
+#Run this after reading in all of the functions:  cort("my file name.txt")#
+#######################################################################################
+#dilution vector (change here if necessary) samples start at row 10.#
+#for example: If your first sample was diluted less than 30 times (lets say 15), then you would set row 10 (first sample is row 10) to 15 rather than 30:#
+#dil[10]<-15#
+#For more than one sample:#
+#dil[c(10,27,22)]<-15#
+#If all of your dilutions are different from the standard 30, you can just change the original code:#
+#dil<-rep(15,length(master[,1]))#
+#dil<-rep(30,48)#
+#cort("",dil)#
+###############################some functions##########################################
+#dil<-rep(30,48); dil[12]<-42#
+#cort("3-1-2013_cort.txt",dil,names=names)#
+cort<-function(txtfilename,dil,names=rep(NA,48)){#
+notes<-c(rep(NA,48))#
+filename<-txtfilename#
+master<-as.data.frame(matrix(nrow=48,ncol=5))#
+colnames(master)<-c("mean_OD","CV","net_OD","log_concent","ng_ml")#
+rownames(master)[1:11]<-c("blank","ta","nsb","bo","std1","std2","std3","std4","std5","std6","std7")#
+#
+data<-read.delim(filename,skip=3,header=FALSE)#
+data405<-as.matrix(data[1:8,3:14])#
+data595<-as.matrix(data[1:8,16:27])#
+data405<-dataPrePro(data405)#
+data595<-dataPrePro(data595)#
+#
+sub<-(data405-data595)#
+master$mean_OD<-getMeanOD(sub)#
+#assumes you are following the std Hofmann lab protocol of putting the replicates one below the other#
+master$CV<-getCV(sub)#
+#master$percent_bound<-getBound(master)#
+master$net_OD<-getNetOD(master$mean_OD,master)#
+x<-log10(c(10000,5000,2500,1250,625,313,156))#
+y<-master$net_OD[5:11]#
+#A=max assmptote, B=Slope factor,C= inflection point, D=min assymptote#
+model=nls(y ~ d+(a-d)/(1+(x/cc)^b),start=list(a=.6,b=6,cc=3.2,d=.2))#
+xplot <- seq(min(x),max(x),length=100)#
+yplot <- (coef(model)["d"]+(coef(model)["a"]-coef(model)["d"])/(1+(xplot/coef(model)["cc"])^coef(model)["b"]))#
+plot(x,y,xlab="log cort concentration log(pg/mL)",ylab="net net_OD",pch=16,col="blue")#
+lines(xplot,yplot, lty="dotted", col="gray50",lwd=3)#
+master$log_concent<-coef(model)["cc"]*(((-1*coef(model)["a"]+master$net_OD)/(coef(model)["d"]-master$net_OD))^(1/coef(model)["b"]))#
+notes[which(master$log_concent>max(x))]<-"off the curve (high)"#
+notes[which(master$log_concent<max(x))]<-"off the curve (low)"#
+points(y=master$net_OD[12:48],x=master$log_concent[12:48],pch=16,col="#1A985085")#
+master$ng_ml<-((10^master$log_concent)*dil)/1000#
+master$log_concent[1:11]<-NA#
+master$ng_ml[1:11]<-NA#
+master$sampNames<-names#
+master$notes<-notes#
+suppressWarnings(master$seanCode<-addSCode(master$sampNames))#
+print(master)#
+print(summary(model))#
+fit<-1-(deviance(model)/sum((y-mean(y))^2))#
+#write.csv(master,paste(filename,".csv",sep=""))#
+text(3.5,.55,labels=paste("Quality of fit","=",fit))#
+}#
+#
+dataPrePro<-function(pdata){#
+  colCount<-1#
+  cdata<-matrix(nrow=length(pdata[,1]),ncol=length(pdata[1,]))#
+  while(colCount<=length(pdata[1,])){#
+    for(i in 1:length(pdata[,1])){#
+      cdata[i,colCount]<-as.numeric(pdata[i,colCount])#
+    }#
+    colCount<-colCount+1#
+  }#
+  cdata#
+}#
+#
+getMeanOD<-function(subD2){#
+  subData<-as.vector(subD2[,])#
+  vecCount<-1#
+ stc<-1#
+  meanOD<-rep(NA,48)#
+    while(stc<=96){#
+      meanOD[vecCount]<-mean(subData[stc:(stc+1)])#
+      stc<-stc+2#
+      vecCount<-vecCount+1#
+      }#
+  meanOD#
+}#
+#
+getCV<-function(subD2){#
+  subData<-as.vector(subD2[,])#
+  vecCount<-1#
+  stc<-1#
+  cv<-rep(NA,48)#
+  while(stc<=96){#
+    cv[vecCount]<-100*((sd(subData[stc:(stc+1)]))/(mean(subData[stc:(stc+1)])))#
+    stc<-stc+2#
+    vecCount<-vecCount+1#
+  }#
+  cv#
+}#
+#
+#getBound<-function(master){#
+#  subBlank<-master[,1]-master[1,1]#
+#  net<-subBlank-subBlank[3]#
+#  bound<-100*(net/net[4]) #
+#  bound#
+#}#
+#
+getNetOD<-function(vector,master){#
+  blank<-master[1,1]#
+  subBlank<-(vector-blank)#
+  NSB<-subBlank[3]#
+  netOD<-(subBlank-NSB)#
+}#
+#
+addSCode<-function(pCodeVector){#
+	sCode<-vector()#
+	pCodeV<-as.numeric(pCodeVector)#
+	pCodeV[pCodeV>64]<-NA#
+	for(i in pCodeV){#
+		if(!is.na(i))(sCode<-c(sCode,rosetta$sCode[rosetta$pCode==i])) else (sCode<-c(sCode,NA))#
+	}#
+	return(sCode)#
+}#
+#
+#save.image("cort.RDATA")
+cort("3-1-2013_cort.txt",dil,names=names)
+filename<-"3-1-2013_cort.txt"
+master<-as.data.frame(matrix(nrow=48,ncol=5))
+colnames(master)<-c("mean_OD","CV","net_OD","log_concent","ng_ml")
+rownames(master)[1:11]<-c("blank","ta","nsb","bo","std1","std2","std3","std4","std5","std6","std7")
+data<-read.delim(filename,skip=3,header=FALSE)
+data405<-as.matrix(data[1:8,3:14])
+data595<-as.matrix(data[1:8,16:27])
+data405<-dataPrePro(data405)
+data595<-dataPrePro(data595)
+sub<-(data405-data595)
+master$mean_OD<-getMeanOD(sub)
+master$CV<-getCV(sub)
+master$net_OD<-getNetOD(master$mean_OD,master)
+x<-log10(c(10000,5000,2500,1250,625,313,156))
+y<-master$net_OD[5:11]
+model=nls(y ~ d+(a-d)/(1+(x/cc)^b),start=list(a=.6,b=6,cc=3.2,d=.2))
+xplot <- seq(min(x),max(x),length=100)
+yplot <- (coef(model)["d"]+(coef(model)["a"]-coef(model)["d"])/(1+(xplot/coef(model)["cc"])^coef(model)["b"]))
+plot(x,y,xlab="log cort concentration log(pg/mL)",ylab="net net_OD",pch=16,col="blue")
+lines(xplot,yplot, lty="dotted", col="gray50",lwd=3)
+master$log_concent<-coef(model)["cc"]*(((-1*coef(model)["a"]+master$net_OD)/(coef(model)["d"]-master$net_OD))^(1/coef(model)["b"]))
+notes
+notes<-c(rep(NA,48))
+notes
+notes[which(master$log_concent>max(x))]
+notes[which(master$log_concent>max(x))]<-"off the curve (high)"
+notes
+notes[which(master$log_concent<min(x))]<-"off the curve (low)"
+notes
+Cortisol Assay v1 2/20/2013 Sean Maguire #
+#######################################################################################
+#functions are listed in the end so read them in first the first time you use it!!#
+#if you make changes please save as your OWN FILE do not save over this file please!#
+#Run this after reading in all of the functions:  cort("my file name.txt")#
+#######################################################################################
+#dilution vector (change here if necessary) samples start at row 10.#
+#for example: If your first sample was diluted less than 30 times (lets say 15), then you would set row 10 (first sample is row 10) to 15 rather than 30:#
+#dil[10]<-15#
+#For more than one sample:#
+#dil[c(10,27,22)]<-15#
+#If all of your dilutions are different from the standard 30, you can just change the original code:#
+#dil<-rep(15,length(master[,1]))#
+#dil<-rep(30,48)#
+#cort("",dil)#
+###############################some functions##########################################
+#dil<-rep(30,48); dil[12]<-42#
+#cort("3-1-2013_cort.txt",dil,names=names)#
+cort<-function(txtfilename,dil,names=rep(NA,48)){#
+notes<-c(rep(NA,48))#
+filename<-txtfilename#
+master<-as.data.frame(matrix(nrow=48,ncol=5))#
+colnames(master)<-c("mean_OD","CV","net_OD","log_concent","ng_ml")#
+rownames(master)[1:11]<-c("blank","ta","nsb","bo","std1","std2","std3","std4","std5","std6","std7")#
+#
+data<-read.delim(filename,skip=3,header=FALSE)#
+data405<-as.matrix(data[1:8,3:14])#
+data595<-as.matrix(data[1:8,16:27])#
+data405<-dataPrePro(data405)#
+data595<-dataPrePro(data595)#
+#
+sub<-(data405-data595)#
+master$mean_OD<-getMeanOD(sub)#
+#assumes you are following the std Hofmann lab protocol of putting the replicates one below the other#
+master$CV<-getCV(sub)#
+#master$percent_bound<-getBound(master)#
+master$net_OD<-getNetOD(master$mean_OD,master)#
+x<-log10(c(10000,5000,2500,1250,625,313,156))#
+y<-master$net_OD[5:11]#
+#A=max assmptote, B=Slope factor,C= inflection point, D=min assymptote#
+model=nls(y ~ d+(a-d)/(1+(x/cc)^b),start=list(a=.6,b=6,cc=3.2,d=.2))#
+xplot <- seq(min(x),max(x),length=100)#
+yplot <- (coef(model)["d"]+(coef(model)["a"]-coef(model)["d"])/(1+(xplot/coef(model)["cc"])^coef(model)["b"]))#
+plot(x,y,xlab="log cort concentration log(pg/mL)",ylab="net net_OD",pch=16,col="blue")#
+lines(xplot,yplot, lty="dotted", col="gray50",lwd=3)#
+master$log_concent<-coef(model)["cc"]*(((-1*coef(model)["a"]+master$net_OD)/(coef(model)["d"]-master$net_OD))^(1/coef(model)["b"]))#
+notes[which(master$log_concent>max(x))]<-"off the curve (high)"#
+notes[which(master$log_concent<min(x))]<-"off the curve (low)"#
+points(y=master$net_OD[12:48],x=master$log_concent[12:48],pch=16,col="#1A985085")#
+master$ng_ml<-((10^master$log_concent)*dil)/1000#
+master$log_concent[1:11]<-NA#
+master$ng_ml[1:11]<-NA#
+master$sampNames<-names#
+master$notes<-notes#
+suppressWarnings(master$seanCode<-addSCode(master$sampNames))#
+print(master)#
+print(summary(model))#
+fit<-1-(deviance(model)/sum((y-mean(y))^2))#
+#write.csv(master,paste(filename,".csv",sep=""))#
+text(3.5,.55,labels=paste("Quality of fit","=",fit))#
+}#
+#
+dataPrePro<-function(pdata){#
+  colCount<-1#
+  cdata<-matrix(nrow=length(pdata[,1]),ncol=length(pdata[1,]))#
+  while(colCount<=length(pdata[1,])){#
+    for(i in 1:length(pdata[,1])){#
+      cdata[i,colCount]<-as.numeric(pdata[i,colCount])#
+    }#
+    colCount<-colCount+1#
+  }#
+  cdata#
+}#
+#
+getMeanOD<-function(subD2){#
+  subData<-as.vector(subD2[,])#
+  vecCount<-1#
+ stc<-1#
+  meanOD<-rep(NA,48)#
+    while(stc<=96){#
+      meanOD[vecCount]<-mean(subData[stc:(stc+1)])#
+      stc<-stc+2#
+      vecCount<-vecCount+1#
+      }#
+  meanOD#
+}#
+#
+getCV<-function(subD2){#
+  subData<-as.vector(subD2[,])#
+  vecCount<-1#
+  stc<-1#
+  cv<-rep(NA,48)#
+  while(stc<=96){#
+    cv[vecCount]<-100*((sd(subData[stc:(stc+1)]))/(mean(subData[stc:(stc+1)])))#
+    stc<-stc+2#
+    vecCount<-vecCount+1#
+  }#
+  cv#
+}#
+#
+#getBound<-function(master){#
+#  subBlank<-master[,1]-master[1,1]#
+#  net<-subBlank-subBlank[3]#
+#  bound<-100*(net/net[4]) #
+#  bound#
+#}#
+#
+getNetOD<-function(vector,master){#
+  blank<-master[1,1]#
+  subBlank<-(vector-blank)#
+  NSB<-subBlank[3]#
+  netOD<-(subBlank-NSB)#
+}#
+#
+addSCode<-function(pCodeVector){#
+	sCode<-vector()#
+	pCodeV<-as.numeric(pCodeVector)#
+	pCodeV[pCodeV>64]<-NA#
+	for(i in pCodeV){#
+		if(!is.na(i))(sCode<-c(sCode,rosetta$sCode[rosetta$pCode==i])) else (sCode<-c(sCode,NA))#
+	}#
+	return(sCode)#
+}#
+#
+#save.image("cort.RDATA")
+cort("3-1-2013_cort.txt",dil,names=names)
+cort("3-1-2013_cort.txt",dil,names=names)
+dil<-rep(30,48); dil[12]<-34.8; dil[33]<-41.6; names<-c(rep(NA,11),53,35,14,44,54,18,26,25,20,50,46,31,64,8,55,41,42,33,11,29,49,19,51,17,28,30,15,45,13,22,32,23,56,43,27,52,21); cort("Cortisol raw 6-20-11.txt",dil,names)
+load("names.R")
+names
+cort<-function(txtfilename,dil,names=rep(NA,48)){#
+notes<-c(rep(NA,48))#
+filename<-txtfilename#
+master<-as.data.frame(matrix(nrow=48,ncol=5))#
+colnames(master)<-c("mean_OD","CV","net_OD","log_concent","ng_ml")#
+rownames(master)[1:11]<-c("blank","ta","nsb","bo","std1","std2","std3","std4","std5","std6","std7")#
+#
+data<-read.delim(filename,skip=3,header=FALSE)#
+data405<-as.matrix(data[1:8,3:14])#
+data595<-as.matrix(data[1:8,16:27])#
+data405<-dataPrePro(data405)#
+data595<-dataPrePro(data595)#
+#
+sub<-(data405-data595)#
+master$mean_OD<-getMeanOD(sub)#
+#assumes you are following the std Hofmann lab protocol of putting the replicates one below the other#
+master$CV<-getCV(sub)#
+#master$percent_bound<-getBound(master)#
+master$net_OD<-getNetOD(master$mean_OD,master)#
+x<-log10(c(10000,5000,2500,1250,625,313,156))#
+y<-master$net_OD[5:11]#
+#A=max assmptote, B=Slope factor,C= inflection point, D=min assymptote#
+model=nls(y ~ d+(a-d)/(1+(x/cc)^b),start=list(a=.6,b=6,cc=3.2,d=.2))#
+xplot <- seq(min(x),max(x),length=100)#
+yplot <- (coef(model)["d"]+(coef(model)["a"]-coef(model)["d"])/(1+(xplot/coef(model)["cc"])^coef(model)["b"]))#
+plot(x,y,xlab="log cort concentration log(pg/mL)",ylab="net net_OD",pch=16,col="blue")#
+lines(xplot,yplot, lty="dotted", col="gray50",lwd=3)#
+master$log_concent<-coef(model)["cc"]*(((-1*coef(model)["a"]+master$net_OD)/(coef(model)["d"]-master$net_OD))^(1/coef(model)["b"]))#
+notes[which(master$log_concent>max(x))]<-"off the curve (high)"#
+notes[which(master$log_concent<min(x))]<-"off the curve (low)"#
+points(y=master$net_OD[12:48],x=master$log_concent[12:48],pch=16,col="#1A985085")#
+master$ng_ml<-((10^master$log_concent)*dil)/1000#
+master$log_concent[1:11]<-NA#
+master$ng_ml[1:11]<-NA#
+master$sampNames<-names#
+master$notes<-notes#
+suppressWarnings(master$seanCode<-addSCode(master$sampNames))#
+print(master)#
+print(summary(model))#
+fit<-1-(deviance(model)/sum((y-mean(y))^2))#
+#write.csv(master,paste(filename,".csv",sep=""))#
+text(3.5,.55,labels=paste("Quality of fit","=",fit))#
+return(master)#
+}
+dil2<-rep(30,48); dil2[12]<-34.8; dil2[33]<-41.6; names2<-c(rep(NA,11),53,35,14,44,54,18,26,25,20,50,46,31,64,8,55,41,42,33,11,29,49,19,51,17,28,30,15,45,13,22,32,23,56,43,27,52,21); cort1<-cort("Cortisol raw 6-20-11.txt",dil2,names2)
+dil<-rep(30,48); dil[12]<-42
+cort2<-cort("3-1-2013_cort.txt",dil,names=names)
+cort1s<-cort1[!is.na(cort1$sCode),]
+cort1
+cort1s<-cort1[!is.na(cort1$seanCode),]
+cort1s
+cort2s<-cort2[!is.na(cort2$seanCode),]
+cort2s
+fullCort<-data.frame(peterCode=c(cort1s$sampNames,cort2s$sampNames),seanCode=c(cort1s$seanCode,cort2s$seanCode),notes=c(cort1s$notes,cort2s$notes))
+fullCort
+fullCort<-data.frame(peterCode=c(cort1s$sampNames,cort2s$sampNames),seanCode=c(cort1s$seanCode,cort2s$seanCode),notes=c(cort1s$notes,cort2s$notes),cort_ng_ml=c(cort1s$ng_ml,cort2s$ng_ml))
+fullCort
+duplicated(fullCort$peterCode)
+fullCort$peterCode==28
+fullCort[fullCort$peterCode==28,]
+fullCort<-data.frame(peterCode=c(cort1s$sampNames,cort2s$sampNames),seanCode=c(cort1s$seanCode,cort2s$seanCode),notes=c(cort1s$notes,cort2s$notes),cort_ng_ml=c(cort1s$ng_ml,cort2s$ng_ml),cv=c(cort1s$CV,cort2s$CV))
+fullCort
+fullCort[fullCort$peterCode==28,]
+fullCort[c(1:24,26:65),]
+fullCort_badSamp<-fullCort[c(1:24,26:65),]
+fullCort[fullCort$peterCode==13,]
+sd(9.65/14.82)
+sd(9.65,14.82)
+sd(c(9.65,14.82))
+sd(c(9.65,14.82))/mean(9.65,14.82)
+interplate<-sd(c(9.65,14.82))/mean(9.65,14.82)
+cort1s
+cort1s[cort1s$peterCode!=28,]
+cort1s[cort1s$sampNames!=28,]
+intraplate1<-mean(cort1s$CV[cort1s$sampNames!=28])
+intraplate1
+intraplate2<-mean(cort2s$CV)
+intraplate2
+interplate<-sd(c(9.65,14.82))/mean(9.65,14.82)
+interplate
+interplate*100
+fullCort[fullCort$peterCode==13,]
+interplate
+interplate<-interplate*100
+interplate
+intraplate1
+intraplate2
+save.image("cort.RDATA")
+cort1
+x<-log10(c(10000,5000,2500,1250,625,313,156))
+x<-c(x,x)
+y<-c(cort1$net_OD[5,11],cort2$net_OD[5,11])
+y<-c(cort1$net_OD[5:11],cort2$net_OD[5:11])
+y
+x
+exp=factor(c(rep(1,7),rep(2,7))
+)
+exp
+data.frame(x,y,exp)
+newdata<-data.frame(x,y,exp)
+exp<-factor(c(rep(1,7),rep(2,7))
+)
+newdata<-data.frame(x,y,exp)
+newData<-data.frame(x,y,exp)
+fullMo<-nls(y ~ d+(a-d)/(1+(newx/cc)^(b[exp])),start=list(a=.6,b=c(6,7),cc=3.2,d=.2),data=newData)
+fullMo<-nls(y ~ d+(a-d)/(1+(x/cc)^(b[exp])),start=list(a=.6,b=c(6,7),cc=3.2,d=.2),data=newData)
+subMO<-nls(y ~ d+(a-d)/(1+(x/cc)^b),start=list(a=.6,b=6,cc=3.2,d=.2),data=newData)
+summary(fullMo)
+summary(subMO)
+anova(fullMo)
+anova(subMO,fullMo)
+anova(fullMo,subMO)
+anova(subMO,fullMo)
+xplot(seq(min(x),max(x),length=100)
+m1<-nls(y ~ d+(a-d)/(1+(x/cc)^b),start=list(a=.6,b=6,cc=3.2,d=.2),data=newData[exp==1,])
+m1<-nls(y ~ d+(a-d)/(1+(x/cc)^b),start=list(a=.6,b=6,cc=3.2,d=.2),data=(newData[exp==1,]))
+summary(m1)
+m2<-nls(y ~ d+(a-d)/(1+(x/cc)^b),start=list(a=.6,b=6,cc=3.2,d=.2),data=(newData[exp==2,]))
+summary(m2)
+yplot2<-(coef(m2)["d"]+(coef(m2)["a"]-coef(m2)["d"])/(1+(xplot/coef(m2)["cc"])^coef(m2)["b"]))
+yplot1 <- (coef(m1)["d"]+(coef(m1)["a"]-coef(m1)["d"])/(1+(xplot/coef(m1)["cc"])^coef(m1)["b"]))
+xplot(seq(min(x),max(x),length=100)
+)
+xplot<-(seq(min(x),max(x),length=100)
+)
+plot(x,y,pch=16,col="purple",data=newData[exp==1])
+newData[exp==1]
+plot(x,y,pch=16,col="purple",data=newData[exp==1,])
+plot(y~x,pch=16,col="purple",data=newData[exp==1,])
+points(y~x,pch=16,col="purple",data=newData[exp==2,])
+plot(y~x,pch=16,col="purple",data=newData[exp==1,])
+points(y~x,pch=16,col="yellow",data=newData[exp==2,])
+lines(xplot,yplot1, lty="dotted", col="purple",lwd=3)
+lines(xplot,yplot2, lty="dotted", col="yellow",lwd=3)
+lines(xplot,yplotSUB,lty="solid", col="gray50",lwd=3)
+yplotSUB<-(coef(subMO)["d"]+(coef(subMO)["a"]-coef(subMO)["d"])/(1+(xplot/coef(subMO)["cc"])^coef(subMO)["b"]))
+plot(y~x,pch=16,col="purple",data=newData[exp==1,])
+points(y~x,pch=16,col="yellow",data=newData[exp==2,])
+lines(xplot,yplot1, lty="dotted", col="purple",lwd=3)
+lines(xplot,yplot2, lty="dotted", col="yellow",lwd=3)
+lines(xplot,yplotSUB,lty="solid", col="gray50",lwd=3)
+plot2py<-function(){#
+plot(y~x,pch=16,col="purple",data=newData[exp==1,])#
+points(y~x,pch=16,col="yellow",data=newData[exp==2,])#
+lines(xplot,yplot1, lty="dotted", col="purple",lwd=3)#
+lines(xplot,yplot2, lty="dotted", col="yellow",lwd=3)#
+lines(xplot,yplotSUB,lty="solid", col="gray50",lwd=3)#
+}
+plot(y~x,pch=16,col="purple",data=newData[exp==1,],xlab="log cort concentration",ylab=net_OD)
+plot(y~x,pch=16,col="purple",data=newData[exp==1,],xlab="log cort concentration",ylab=net_OD)
+plot(y~x,pch=16,col="purple",data=newData[exp==1,],xlab="log cort concentration",ylab="net_OD")
+points(y~x,pch=16,col="yellow",data=newData[exp==2,])
+lines(xplot,yplot1, lty="dotted", col="purple",lwd=3)
+lines(xplot,yplot2, lty="dotted", col="yellow",lwd=3)
+lines(xplot,yplotSUB,lty="solid", col="gray50",lwd=3)
+newData
+newData2<-newData
+newData2$x<-as.factor(newData2$x)
+newData2
+CV<-vector()#
+for(x in newData2$x[1:7]){#
+	subdata<-newData2[newData2$x==x,]#
+	CV<-c(CV,(sd(subdata$x)/mean(subdata$x)))#
+}
+x
+newData2$x[1:7]
+newData2[newData2$x==x,]
+for(x in newData2$x[1:7]){#
+	subdata<-newData2[newData2$x==x,]#
+	CV<-c(CV,(sd(subdata$y)/mean(subdata$y)))#
+}
+CV<-vector()#
+for(x in newData2$x[1:7]){#
+	subdata<-newData2[newData2$x==x,]#
+	CV<-c(CV,(sd(subdata$y)/mean(subdata$y)))#
+}
+CV
+CV<-CV*100
+CV
+mean(CV)
+save.image("cort.RDATA")
+plot2py<-function(){#
+plot(y~x,pch=16,col="purple",data=newData[exp==1,],xlab="log cort concentration",ylab="net_OD")#
+points(y~x,pch=16,col="yellow",data=newData[exp==2,])#
+lines(xplot,yplot1, lty="dotted", col="purple",lwd=3)#
+lines(xplot,yplot2, lty="dotted", col="yellow",lwd=3)#
+lines(xplot,yplotSUB,lty="solid", col="gray50",lwd=3)#
+}
+save.image("cort.RDATA")
